@@ -1,4 +1,5 @@
 ﻿#include "UIManager.h"
+#include <algorithm>
 
 namespace SquareCore
 {

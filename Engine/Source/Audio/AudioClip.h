@@ -2,6 +2,7 @@
 
 #include <miniaudio/miniaudio.h>
 #include <string>
+#include <cstdint>
 
 namespace SquareCore {
 

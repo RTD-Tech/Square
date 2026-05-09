@@ -16,6 +16,11 @@ file(GLOB_RECURSE ENGINE_HEADERS
     "ThirdParty/Include/**.hpp"
 )
 
+set_source_files_properties(
+    ${CMAKE_CURRENT_SOURCE_DIR}/ThirdParty/Include/miniaudio/miniaudio.c
+    PROPERTIES LANGUAGE CXX
+)
+
 # Create the engine static library
 add_library(Engine STATIC 
     ${ENGINE_SOURCES}

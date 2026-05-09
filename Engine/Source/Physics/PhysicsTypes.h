@@ -1,8 +1,8 @@
 #pragma once
 
-#include <vector>
-
 #include "Math/Math.h"
+#include <vector>
+#include <cstdint>
 
 namespace SquareCore
 {

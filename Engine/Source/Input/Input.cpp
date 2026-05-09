@@ -1,4 +1,5 @@
 #include "Input.h"
+#include <cstring>
 
 namespace SquareCore {
 
