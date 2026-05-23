@@ -37,7 +37,8 @@ void UserInterface::OnStart()
     SetUIElementPersistent(main_menu_play_button, true);
     SetUIElementPersistent(main_menu_credits_button, true);
     SetUIElementPersistent(main_menu_quit_button, true);
-    
+    SetUIElementPersistent(main_menu_reset_data_button, true);
+
     credits_title = AddUIText(1920.0f / 2.0f, 150.0f, 64, SquareCore::RGBA(255, 255, 255, 255), "Resources/Fonts/Helvetica.ttf", "CREDITS");
     text_size = GetTextSize(credits_title);
     SetUIElementPosition(credits_title, 1920.0f / 2.0f - text_size.x / 2.0f, 150.0f);
@@ -208,6 +209,7 @@ void UserInterface::ShowCredits(bool show)
         SetUIElementVisible(main_menu_play_button, false);
         SetUIElementVisible(main_menu_credits_button, false);
         SetUIElementVisible(main_menu_quit_button, false);
+        SetUIElementVisible(main_menu_reset_data_button, false);
         return;
     }
     SetUIElementVisible(credits_title, false);
@@ -218,6 +220,7 @@ void UserInterface::ShowCredits(bool show)
     SetUIElementVisible(main_menu_play_button, true);
     SetUIElementVisible(main_menu_credits_button, true);
     SetUIElementVisible(main_menu_quit_button, true);
+    SetUIElementVisible(main_menu_reset_data_button, true);
 }
 
 void UserInterface::AreaTitle(std::string title, std::string info)
@@ -526,6 +529,7 @@ void UserInterface::OnPlay()
     SetUIElementVisible(main_menu_play_button, false);
     SetUIElementVisible(main_menu_credits_button, false);
     SetUIElementVisible(main_menu_quit_button, false);
+    SetUIElementVisible(main_menu_reset_data_button, false);
     SetUIElementVisible(credits_title, false);
     SetUIElementVisible(credits_info_od, false);
     SetUIElementVisible(credits_info_ck, false);

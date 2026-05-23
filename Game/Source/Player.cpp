@@ -1076,5 +1076,5 @@ void Player::UpdateAudioVolumes()
 void Player::ResetPlayerData()
 {
     player_data = PlayerData();
-    GameStateManager::SavePlayerData("S_001.square", player_data);
+    GameStateManager::SavePlayerData("Saves/S_001.square", player_data);
 }
