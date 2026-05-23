@@ -1,4 +1,5 @@
-.vscode
-idea
-Build
-Game/Saves
+.vscode/
+.idea/
+cmake-build-debug/
+Build/
+Game/Saves/

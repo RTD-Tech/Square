@@ -86,11 +86,19 @@ namespace SquareCore
     void Renderer::RenderUI()
     {
         std::unordered_map<uint32_t, UIElement*>& elements = uiManagerRef->GetElements();
+
+        uiDrawOrder.clear();
+        uiDrawOrder.reserve(elements.size());
+        for (auto& [id, element] : elements) uiDrawOrder.push_back(element);
+        std::sort(uiDrawOrder.begin(), uiDrawOrder.end(), [](UIElement* a, UIElement* b) {
+            if (a->zIndex != b->zIndex) return a->zIndex < b->zIndex;
+            return a->ID < b->ID;
+        });
         
         float scaleX = static_cast<float>(windowWidth) / baseWindowWidth;
         float scaleY = static_cast<float>(windowHeight) / baseWindowHeight;
 
-        for (auto& [id, element] : elements)
+        for (UIElement* element : uiDrawOrder)
         {
             if (!element->visible) continue;
             

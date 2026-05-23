@@ -30,10 +30,10 @@ int main(int argc, char* argv[]) {
     userInterface->SetMap(map);
     enemy_manager->SetPlayerScript(player);
     userInterface->GetDialogManager()->SetPlayerScript(player);
-    app.PushScript(map);
     app.PushScript(player);
     app.PushScript(enemy_manager);
     app.PushScript(userInterface);
+    app.PushScript(map);
 
     // Parse command line arguments
     if (argc > 1) {

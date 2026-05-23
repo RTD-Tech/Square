@@ -136,6 +136,8 @@ void Player::OnExit()
 
 void Player::OnUpdate(float delta_time)
 {
+    if (map->current_map == 0) return;
+
     Move(delta_time);
     Jump(delta_time);
     Dash(delta_time);

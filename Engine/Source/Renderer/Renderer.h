@@ -60,6 +60,7 @@ private:
     SDL_Renderer* rendererRef = nullptr;
     TTF_TextEngine* textEngineRef = nullptr;
     UIManager* uiManagerRef = nullptr;
+    std::vector<UIElement*> uiDrawOrder;
     // Stores the width of the application window
     int windowWidth;
     // Stores the height of the application window
