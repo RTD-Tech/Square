@@ -2,11 +2,6 @@
 #include <string>
 #include <iostream>
 
-#include "Player.h"
-#include "EnemyManager.h"
-#include "Map.h"
-#include "UserInterface.h"
-
 #ifdef _WIN32
 #pragma comment(linker, "/SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup")
 #endif
@@ -15,33 +10,13 @@ int main(int argc, char* argv[]) {
     // Square application
     SquareCore::Application app;
 
-    Map* map = new Map();
-    Player* player = new Player();
-    EnemyManager* enemy_manager = new EnemyManager();
-    UserInterface* userInterface = new UserInterface();
-    map->SetEnemyManager(enemy_manager);
-    map->SetPlayerScript(player);
-    map->SetUserInterface(userInterface);
-    player->SetDialogManager(userInterface->GetDialogManager());
-    player->SetEnemyManager(enemy_manager);
-    player->SetUserInterface(userInterface);
-    player->SetMap(map);
-    userInterface->SetPlayerScript(player);
-    userInterface->SetMap(map);
-    enemy_manager->SetPlayerScript(player);
-    userInterface->GetDialogManager()->SetPlayerScript(player);
-    app.PushScript(player);
-    app.PushScript(enemy_manager);
-    app.PushScript(userInterface);
-    app.PushScript(map);
-
     // Parse command line arguments
     if (argc > 1) {
         std::string arg1 = argv[1];
 
         if (arg1 == "--server") {
             // Run as dedicated server
-            std::cout << "Starting River server...\n";
+            std::cout << "Starting Square server...\n";
             app.RunServer();
             return 0;
         }
