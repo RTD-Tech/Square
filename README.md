@@ -3,7 +3,7 @@
 1. Clone the repository
 
     ```sh
-    git clone https://github.com/odesai840/Square.git
+    git clone https://github.com/RTD-Tech/Square.git
     cd Square
     ```
 
